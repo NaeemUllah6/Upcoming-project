@@ -568,12 +568,12 @@ nav button {
         &.in-view {
             background-color: rgba(214, 212, 212, 0.308);
             height: 317px;
+
             &::before {
                 content: '';
                 position: absolute;
                 left: 50%;
                 top: 0px;
-                transform: translateX(-50%);
                 width: 45px;
                 height: 45px;
                 border-radius: 50%;
@@ -584,9 +584,9 @@ nav button {
                 background-size: 20px 20px;
                 background-repeat: no-repeat;
                 background-position: center;
-                background-color:rgba(255, 255, 255, 0);
+                background-color: rgba(255, 255, 255, 0);
                 z-index: 1;
-
+                transition: 0.7s ease;
 
             }
         }
@@ -605,7 +605,8 @@ nav button {
         }
 
     }
-    .last-list-line{
+
+    .last-list-line {
         height: 250px !important;
     }
 }
@@ -716,7 +717,7 @@ footer input:focus {
     font-family: Dm Sans;
     font-weight: 900;
     font-size: 30px;
-    background-color:white !important;
+    background-color: white !important;
 
 }
 
@@ -900,17 +901,17 @@ footer a:hover {
     .global-transition {
         transition: 0.125s ease-in-out, background-color 0.2s ease-out, color 0.1s ease-out, border 0.1s ease-out;
     }
-    
-    
-    
-    
+
+
+
+
     .timeline {
         padding: 0 29px;
-    
+
         ul {
             padding: 0;
         }
-    
+
         .default-line {
             content: '';
             position: absolute;
@@ -919,14 +920,14 @@ footer a:hover {
             background: white;
             height: 100%;
         }
-    
+
         .draw-line {
             width: 6px;
             height: 0;
             position: absolute;
             background: #FE5C5C
         }
-    
+
         ul li {
             list-style-type: none;
             position: relative;
@@ -934,10 +935,11 @@ footer a:hover {
             margin: 0 auto;
             height: 200px !important;
             background: transparent;
-    
+
             &.in-view {
                 background-color: rgba(214, 212, 212, 0.308);
                 height: 320px;
+
                 &::before {
                     content: '';
                     position: absolute;
@@ -954,13 +956,13 @@ footer a:hover {
                     background-size: 20px 20px;
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-color:rgba(255, 255, 255, 0);
+                    background-color: rgba(255, 255, 255, 0);
                     z-index: 1;
-    
-    
+
+
                 }
             }
-    
+
             &::before {
                 content: '';
                 position: absolute;
@@ -973,9 +975,10 @@ footer a:hover {
                 background: inherit;
                 transition: all 0.5s ease-in-out;
             }
-    
+
         }
-        .last-list-line{
+
+        .last-list-line {
             height: 150px !important;
         }
     }
