@@ -145,18 +145,18 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-6">
-                    <form action="">
+                    <form id="apiForm">
                         <div class="d-flex flex-column input-main">
                             <div class="position-relative">
-                                <input class=" bg-transparent border-top-0 border-end-0 border-start-0" type="text"
-                                    placeholder="Name">
+                                <input id="name" class="bg-transparent border-top-0 border-end-0 border-start-0"
+                                    type="text" placeholder="Name" required>
                                 <div class="position-absolute input_icon">
                                     <img src="assets/images/user.svg" alt="">
                                 </div>
                             </div>
                             <div class="position-relative">
-                                <input class=" bg-transparent border-top-0 border-end-0 border-start-0" type="text"
-                                    placeholder="Company Name">
+                                <input id="company_name" class="bg-transparent border-top-0 border-end-0 border-start-0"
+                                    type="text" placeholder="Company Name" required>
                                 <div class="position-absolute input_icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-building" viewBox="0 0 16 16">
@@ -169,30 +169,31 @@
                             </div>
                             <div class="d-flex gap-3">
                                 <div class="position-relative w-100">
-                                    <input class="bg-transparent border-top-0 border-end-0 border-start-0"
-                                        style="padding-left: 40px;" type="text" placeholder="Email">
+                                    <input id="email" class="bg-transparent border-top-0 border-end-0 border-start-0"
+                                        type="email" placeholder="Email" required>
                                     <div class="position-absolute input_icon">
-                                        <img class="" src="assets/images/contact-mail.svg" alt="">
+                                        <img src="assets/images/contact-mail.svg" alt="">
                                     </div>
                                 </div>
                                 <div class="position-relative w-100">
-                                    <input class=" bg-transparent border-top-0 border-end-0 border-start-0" type="text"
-                                        placeholder="Phone">
+                                    <input id="phone" class="bg-transparent border-top-0 border-end-0 border-start-0"
+                                        type="text" placeholder="Phone" required>
                                     <div class="position-absolute input_icon">
                                         <img src="assets/images/phone.svg" alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="position-relative w-100">
-                                <input class=" bg-transparent border-top-0 border-end-0 border-start-0" type="text"
-                                    placeholder="Notes">
+                                <input id="notes" class="bg-transparent border-top-0 border-end-0 border-start-0"
+                                    type="text" placeholder="Notes" required>
                                 <div class="position-absolute input_icon">
                                     <img src="assets/images/edit-icon.svg" alt="">
                                 </div>
                             </div>
-                            <button class="whole_button bg-malta">Send</button>
+                            <button type="submit" class="whole_button bg-malta">Send</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -209,7 +210,8 @@
                         <div class="d-flex flex-column gap-3 pt-4">
                             <div class="d-flex align-items-center gap-3">
                                 <i class="fa-solid fa-location-dot  color_red"></i>
-                                <a class="fs_16 lh_24 Dm_family black_2 fw_400 text-decoration-none" href="https://maps.app.goo.gl/SitnjHYMgBbBADAs7">18093
+                                <a class="fs_16 lh_24 Dm_family black_2 fw_400 text-decoration-none"
+                                    href="https://maps.app.goo.gl/SitnjHYMgBbBADAs7">18093
                                     Prairie Ave Torrance, CA 90504</a>
                             </div>
                             <div class="d-flex align-items-center gap-3">
@@ -229,7 +231,8 @@
                         <div class="d-flex flex-column gap-3">
                             <!-- <a class="fs_14 fw_400 Inter_family lh_24 color_black text-decoration-none" href="/">All
                                 Campaigns</a> -->
-                            <a class="fs_14 fw_400 Inter_family lh_24 color_black text-decoration-none" href="visit-us.html">Upcoming
+                            <a class="fs_14 fw_400 Inter_family lh_24 color_black text-decoration-none"
+                                href="visit-us.html">Upcoming
                                 Events</a>
                             <!-- <a class="fs_14 fw_400 Inter_family lh_24 color_black text-decoration-none" href="/">Meet The
                                 Team</a> -->
@@ -274,6 +277,51 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script>
+        document.getElementById("apiForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const formData = {
+                lp_campaign_id: "13349",
+                lp_supplier_id: "27453",
+                lp_key: "mw0hroeur6y5",
+                lp_action: "",
+                lp_subid1: "",
+                lp_subid2: "",
+                company_name: document.getElementById("company_name").value,
+                first_name: document.getElementById("name").value.split(" ")[0] || "",
+                last_name: document.getElementById("name").value.split(" ")[1] || "",
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                notes: document.getElementById("notes").value,
+                ip_address: "22.10.13.9",
+                landing_page_url: "https://www.vercel.app",
+            };
+
+            try {
+
+                const response = await fetch("https://api.leadprosper.io/direct_post", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    console.log(response);
+
+                    alert("Your message has been sent successfully!");
+                } else {
+                    const error = await response.json();
+                    alert("Technical Error: " + error.message || "Something went wrong.");
+                }
+            } catch (err) {
+                console.error("Network Error:", err);
+                alert("Network error. Please try again later.");
+            }
+        });
+
+    </script>
 </body>
 
 </html>

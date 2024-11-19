@@ -527,36 +527,93 @@ nav button {
 
 /* ---------------------------------------------Chooseus--------------------------------------------- */
 
+.global-transition {
+    transition: 0.125s ease-in-out, background-color 0.2s ease-out, color 0.1s ease-out, border 0.1s ease-out;
+}
 
+
+
+
+.timeline {
+    padding: 0 50px;
+
+    ul {
+        padding: 0;
+    }
+
+    .default-line {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 4px;
+        background: white;
+        height: 100%;
+    }
+
+    .draw-line {
+        width: 6px;
+        height: 0;
+        position: absolute;
+        background: #FE5C5C
+    }
+
+    ul li {
+        list-style-type: none;
+        position: relative;
+        width: 6px;
+        margin: 0 auto;
+        height: 340px;
+        background: transparent;
+
+        &.in-view {
+            background-color: rgba(214, 212, 212, 0.308);
+            height: 317px;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0px;
+                transform: translateX(-50%);
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                border: 4px solid #ff000079;
+                ;
+                background-image: url('https://sg0duxoli5-flywheel.netdna-ssl.com/wp-content/themes/inspired_elearning_theme/images/check-dark.svg');
+                /* background-color: #ff000079; */
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color:rgba(255, 255, 255, 0);
+                z-index: 1;
+
+
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: inherit;
+            transition: all 0.5s ease-in-out;
+        }
+
+    }
+    .last-list-line{
+        height: 250px !important;
+    }
+}
 
 
 
 /* ------------------------------- */
-.blur {
-    /* animation: blurAnimation 1s both ;
-    animation-timeline: view(); */
-    transition: all 1.2s ease-in-out;
-    transition-property: color, width, height, box-shadow;
-}
 
-.blur.active,
-.blur.active p {
-
-    color: rgb(156, 19, 19) !important;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    font-size: 35px;
-    box-shadow: rgba(254, 92, 92, 1) 0px 0px 1px 5px;
-
-}
-
-/* .blur.active {
-    animation: mymove  3s ;
-  }
-@keyframes mymove {
-    50% {box-shadow: rgba(254, 92, 92, 1) 0px 0px 1px 5px ;}
-  } */
 /* ------------------------------------ */
 .choose_us {
     background-color: #FE5C5C;
@@ -658,7 +715,8 @@ footer input:focus {
     color: #FE5C5C;
     font-family: Dm Sans;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 30px;
+    background-color:white !important;
 
 }
 
@@ -835,6 +893,91 @@ footer a:hover {
         position: inherit !important;
         top: 120px;
         align-self: start;
+    }
+
+
+
+    .global-transition {
+        transition: 0.125s ease-in-out, background-color 0.2s ease-out, color 0.1s ease-out, border 0.1s ease-out;
+    }
+    
+    
+    
+    
+    .timeline {
+        padding: 0 29px;
+    
+        ul {
+            padding: 0;
+        }
+    
+        .default-line {
+            content: '';
+            position: absolute;
+            left: 50% !important;
+            width: 4px;
+            background: white;
+            height: 100%;
+        }
+    
+        .draw-line {
+            width: 6px;
+            height: 0;
+            position: absolute;
+            background: #FE5C5C
+        }
+    
+        ul li {
+            list-style-type: none;
+            position: relative;
+            width: 6px;
+            margin: 0 auto;
+            height: 200px !important;
+            background: transparent;
+    
+            &.in-view {
+                background-color: rgba(214, 212, 212, 0.308);
+                height: 320px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 50% !important;
+                    top: 0px;
+                    transform: translateX(-50%);
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    border: 4px solid #ff000079;
+                    ;
+                    background-image: url('https://sg0duxoli5-flywheel.netdna-ssl.com/wp-content/themes/inspired_elearning_theme/images/check-dark.svg');
+                    /* background-color: #ff000079; */
+                    background-size: 20px 20px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-color:rgba(255, 255, 255, 0);
+                    z-index: 1;
+    
+    
+                }
+            }
+    
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: inherit;
+                transition: all 0.5s ease-in-out;
+            }
+    
+        }
+        .last-list-line{
+            height: 150px !important;
+        }
     }
 }
 
