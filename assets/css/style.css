@@ -526,6 +526,9 @@ nav button {
 
 
 /* ---------------------------------------------Chooseus--------------------------------------------- */
+.column-text{
+    padding: 104px 0;
+}
 
 .global-transition {
     transition: 0.125s ease-in-out, background-color 0.2s ease-out, color 0.1s ease-out, border 0.1s ease-out;
@@ -562,12 +565,12 @@ nav button {
         position: relative;
         width: 6px;
         margin: 0 auto;
-        height: 340px;
+        height: 330px;
         background: transparent;
 
         &.in-view {
             background-color: rgba(214, 212, 212, 0.308);
-            height: 317px;
+            height: 290px;
 
             &::before {
                 content: '';
@@ -720,42 +723,6 @@ footer input:focus {
     background-color: white !important;
 
 }
-
-.boxes_process {
-    height: 50px;
-    width: 50px;
-}
-
-.column-1 {
-    height: 50%;
-    width: 6px;
-    background: linear-gradient(105.57deg, #FE5C5C 0%, #FFBC47 100%);
-}
-
-.column-2 {
-    height: 100%;
-    width: 6px;
-    background: linear-gradient(105.57deg, #FE5C5C 0%, #FFBC47 100%);
-}
-
-.column-3 {
-    height: 100%;
-    width: 6px;
-    background: linear-gradient(105.57deg, #FE5C5C 0%, #FFBC47 100%);
-}
-
-.column-4 {
-    height: 80%;
-    width: 6px;
-    background: linear-gradient(105.57deg, #FE5C5C 0%, #FFBC47 100%);
-}
-
-.column-text {
-    padding: 106px 0;
-    max-width: 444px;
-    width: 100%;
-}
-
 
 
 .padding-bottom-section {
@@ -993,35 +960,6 @@ footer a:hover {
 
     .p_md {
         padding: 50px 0;
-    }
-
-    .column-1 {
-        height: 150px;
-        width: 6px;
-        background: linear-gradient(105.57deg, #FE5C5C 0%, #FFBC47 100%);
-    }
-
-    .column-2 {
-        height: 270px;
-        width: 6px;
-        background: linear-gradient(105.57deg, #FE5C5C 0%, #FFBC47 100%);
-    }
-
-    .column-3 {
-        height: 270px;
-        width: 6px;
-        background: linear-gradient(105.57deg, #FE5C5C 0%, #FFBC47 100%);
-    }
-
-    .column-4 {
-        height: 150px;
-        width: 6px;
-        background: linear-gradient(105.57deg, #FE5C5C 0%, #FFBC47 100%);
-    }
-
-    .column-text {
-        padding: 20px 0;
-        max-width: 100%;
     }
 
     .fs_md {
