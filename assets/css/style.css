@@ -529,7 +529,23 @@ nav button {
 .column-text{
     padding: 104px 0;
 }
+.column-text-special{
+    padding:36px 0;
+}
 
+
+@media(max-width:1280px){
+    .column-text-special{
+        padding: 104px 0;
+    }
+
+}
+@media(max-width:1024px){
+    .column-text-special{
+        padding: 20px 0;
+    }
+
+}
 .global-transition {
     transition: 0.125s ease-in-out, background-color 0.2s ease-out, color 0.1s ease-out, border 0.1s ease-out;
 }
@@ -565,7 +581,7 @@ nav button {
         position: relative;
         width: 6px;
         margin: 0 auto;
-        height: 330px;
+        height: 290px;
         background: transparent;
 
         &.in-view {
